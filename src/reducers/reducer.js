@@ -25,9 +25,16 @@ export const Reducer = (state = intitialState, action) => {
                 editing: !state.editing
             };
         case 'REMOVE_FEATURE':
+            console.log(state.car.features);
             return {
                 ...state,
-                editing: !state.editing
+                additionalPrice: state.additionalPrice - action.payload.price,
+                car: {
+                    ...state.car,
+                    features: state.car.features.filter(
+                        item => item.id !== action.payload.id
+                    )
+                }
             };
             default:
                 return state;
