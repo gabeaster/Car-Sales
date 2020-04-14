@@ -17,6 +17,19 @@ export const initialState = {
 
 export const Reducer = (state = intitialState, action) => {
     console.log(state, action);
-    
-    return state;
+    switch (action.type) {
+        case 'BUY_ITEM':
+            return {
+                ...state,
+                title: action.payload,
+                editing: !state.editing
+            };
+        case 'REMOVE_FEATURE':
+            return {
+                ...state,
+                editing: !state.editing
+            };
+            default:
+                return state;
+    }
 }
