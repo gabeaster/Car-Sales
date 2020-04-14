@@ -15,7 +15,7 @@ export const initialState = {
     ]
 };
 
-export const Reducer = (state = intitialState, action) => {
+export const Reducer = (state = initialState, action) => {
     console.log(state, action);
     switch (action.type) {
         case 'BUY_ITEM':
@@ -39,4 +39,4 @@ export const Reducer = (state = intitialState, action) => {
             default:
                 return state;
     }
-}
+};
